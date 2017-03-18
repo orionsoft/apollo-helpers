@@ -1,12 +1,12 @@
 # Apollo Helpers
 
 
-##Installation
+## Installation
 
     yarn add object-path
     meteor add orionsoft:apollo-helpers
 
-##Usage
+## Usage
 
 ```javascript
 import {validate, createModifier} from 'meteor/orionsoft:apollo-helpers'
@@ -21,7 +21,7 @@ export default function (root, {postId, postInput},context) {
   return Posts.findOne(postId)
 }
 ```
-##Methods
+## Methods
 **createModifier**
 
 Creates a ready to use object in the function to update the collection
