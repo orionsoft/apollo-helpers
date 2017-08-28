@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'orionsoft:apollo-helpers',
-  version: '0.1.0',
+  version: '0.2.0',
   // Brief, one-line summary of the package.
   summary: 'Helpers for Apollo and Meteor',
   // URL to the Git repository containing the source code for this package.
@@ -12,14 +12,14 @@ Package.describe({
   documentation: 'README.md'
 })
 
-Package.onUse(function (api) {
+Package.onUse(function(api) {
   api.versionsFrom('1.4.2.3')
   api.use('ecmascript')
   api.use('mdg:validation-error@0.5.1', 'server')
   api.mainModule('apollo-helpers.js', 'server')
 })
 
-Package.onTest(function (api) {
+Package.onTest(function(api) {
   api.use('ecmascript')
   api.use('tinytest')
   api.use('orionsoft:apollo-helpers')
