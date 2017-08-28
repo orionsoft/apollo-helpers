@@ -14,16 +14,25 @@ Helpers for Meteor and Apollo (serverside)
 ## Usage
 
 ```javascript
-import {validate, createModifier} from 'meteor/orionsoft:apollo-helpers'
-import Posts from 'api/collections/Posts'
+import {Meteor} from 'meteor/meteor'
+import {createModifier, validate} from 'meteor/orionsoft:apollo-helpers'
 
-export default function (root, {postId, postInput},context) { 
+export default function (root, {userId, profile}, context) {
+  const keys = {
+    'profile.name': 'name',
+    'profile.phone': 'phone',
+    'profile.address': 'address',
+    'profile.district': 'district',
+    'profile.city': 'city',
+    'profile.state': 'state',
+    'profile.country': 'country'
+  }
   // transform your input data to make it easier to insert into update function 
-  const modifier = createModifier(postInput)
+  const modifier = createModifier(profile, keys)
   // Validate your formatted input data with your scheme rules, if you have any error return a friendly object with your error
-  validate(Posts, modifier)
-  Posts.update(postId, modifier)
-  return Posts.findOne(postId)
+  validate(Meteor.users, modifier, keys)
+  Meteor.users.update(userId, modifier)
+  return Meteor.users.findOne(userId)
 }
 ```
 ## Methods
