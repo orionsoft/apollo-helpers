@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 # Apollo Helpers
 
 Helpers for Meteor and Apollo (serverside)
-=======
-# Apollo Helpers
 
 
 ## Installation
@@ -36,6 +33,7 @@ export default function (root, {userId, profile}, context) {
 }
 ```
 ## Methods
+
 **createModifier**
 
 Creates a ready to use object in the function to update the collection
@@ -59,4 +57,16 @@ validate(Collection, modifier)
 ```
 - ```Collection``` : Mongo Collection
 - ```modifier``` : Result of the createModifier function
->>>>>>> 84c2d835ddcee67413bdc4cb4bdfcc9187ddc025
+
+
+**FieldError**
+
+Validate your modifier with your scheme rules
+
+```javascript
+import {FieldError} from 'meteor/orionsoft:apollo-helpers'
+
+throw new FieldError(fieldName, errorMessage)
+```
+- ```fieldName``` : Name of the field
+- ```errorMessage``` : Error message
