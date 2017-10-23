@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'orionsoft:apollo-helpers',
-  version: '0.3.0',
+  version: '0.3.1',
   // Brief, one-line summary of the package.
   summary: 'Helpers for Apollo and Meteor',
   // URL to the Git repository containing the source code for this package.
